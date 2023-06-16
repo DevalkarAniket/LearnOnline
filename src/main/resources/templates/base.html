@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="layout(content)">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body style="background-color: #035992">
+	<div id="page-container">
+		<!-- Navbar -->
+		<nav th:insert="~{navbar::navbar2}" id="base"></nav>
+
+		<!-- Thymeleaf content -->
+		<div id="page-wrap" class="py-2">
+			<div class="" th:replace="${content}">
+				<!-- all other page content -->
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" th:insert="~{footer::footer}"></footer>
+	</div>
+	<script type="text/javascript" th:src="@{/css/bootstrap.min.js}"></script>
+</body>
+</html>

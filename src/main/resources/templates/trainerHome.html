@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="~{base::layout(~{::div})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/allCss.css}">
+</head>
+<body>
+	<div>
+		<h1 style="text-align: center; color: red; font-size: 50px">Trainer
+			Home</h1>
+	</div>
+
+	<div class="m-5" align="center">
+		<a th:href="@{/createCourse}" class="btn btn-success m-3">Create
+			Course</a> <a th:href="@{/addLesson}" class="btn btn-warning m-3">Add
+			Lesson</a> <a th:href="@{/fetchCourses}" class="btn btn-success m-3">View
+			Courses</a>
+	</div>
+</body>
+</html>

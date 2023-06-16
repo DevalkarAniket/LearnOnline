@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>LearnOnline</title>
+<link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" href="" th:href="@{/css/style.css}">
+</head>
+<body
+	style="background-image: url('/images/homebg2.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+	<div class="page-container">
+		<!-- Navbar -->
+		<nav th:insert="~{navbar::navbar2}" id="base"></nav>
+
+		<!-- Main content -->
+		<div id="page-wrap" class="container">
+			<div class="row">
+				<p class="fs-1 fw-bold">Welcome to LearOnline Website</p>
+			</div>
+			<a th:href="@{/register}" class="btn btn-success m-3">Register</a> <a
+				th:href="@{/login}" class="btn btn-warning m-3">Login</a>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" th:insert="~{footer::footer}"></footer>
+	</div>
+</body>
+</html>

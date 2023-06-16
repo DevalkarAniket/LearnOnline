@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="~{base::layout(~{::div})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/allCss.css}">
+</head>
+
+<body>
+	<div class="container p-3">
+		<h3 class="text-center p-1">
+			<b>Buy &nbsp;Course</b>
+		</h3>
+		<table class="table table-hover">
+			<thead class="th-bg text-white">
+				<tr class="tr-th text-center">
+					<th scope="col">Course ID</th>
+					<th scope="col">Course Name</th>
+					<th scope="col">Course Price</th>
+					<th scope="col">Lessons</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody class="tb-bg">
+				<tr class="tr-td text-center" th:each="course:${courseList}">
+					<td th:text="${course.courseId}"></td>
+					<td th:text="${course.courseName}"></td>
+					<td th:text="${course.coursePrice}"></td>
+					<td><ul>
+							<li th:each="item : ${course.lessons}"
+								th:text="${item.lessonName}"></li>
+						</ul></td>
+					<td><a href="" class="btn btn-sm btn-primary"><i
+							class="fas fa-edit"></i>buy</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

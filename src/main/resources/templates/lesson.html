@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="~{base::layout(~{::div})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/allCss.css}">
+</head>
+<body>
+
+	<div class="container p-3">
+		<h3 class="text-center p-1">
+			<b>Course &nbsp;Details</b>
+		</h3>
+		<table class="table table-hover">
+			<thead class="th-bg text-white">
+				<tr class="tr-th text-center">
+					<th scope="col">Course ID</th>
+					<th scope="col">Lesson ID</th>
+					<th scope="col">Lesson Name</th>
+					<th scope="col">Lesson Topic</th>
+					<th scope="col">Video Link</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody class="tb-bg">
+				<tr class="tr-td text-center">
+					<td th:text="${lesson.course.courseId}"></td>
+					<td th:text="${lesson.lessonId}"></td>
+					<td th:text="${lesson.lessonName}"></td>
+					<td th:text="${lesson.lessonTopic}"></td>
+					<td th:text="${lesson.link}"></td>
+					<td><a href="" class="btn btn-sm btn-primary"><i
+							class="fas fa-edit"></i>Edit</a> <a href=""
+						class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i>Delete</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+		<div>
+			<iframe width="560" height="315"
+				src="https://www.youtube.com/embed/ERDvP0s7ask"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen></iframe>
+		</div>
+		<div class="container">
+			<form action="/addComment" method="post">
+				<label>Comments here</label>
+				<textarea name="comment">Enter text here....</textarea>
+				<input type="submit" value="Add Comment">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

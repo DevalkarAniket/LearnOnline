@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="~{base::layout(~{::div})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/allCss.css}">
+</head>
+<body>
+	<div class="container p-3">
+		<h3 class="text-center p-1">
+			<b>My &nbsp;Courses</b>
+		</h3>
+		<table class="table table-hover">
+			<thead class="th-bg text-white">
+				<tr class="tr-th text-center">
+					<th scope="col">Course Name</th>
+					<th scope="col">Lessons</th>
+				</tr>
+			</thead>
+			<tbody class="tb-bg">
+				<tr class="tr-td text-center" th:each="course:${courseList}">
+					<td th:text="${course.courseName}"></td>
+					<td th:text="${course.Lessons}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+	th:replace="~{base::layout(~{::div})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/allCss.css}">
+</head>
+<body>
+	<div class="container p-3">
+		<div class="row">
+			<div class="col-md-4 offset-md-4">
+				<div class="card">
+					<div class="card-body p-4">
+						<h4 class="text-center p-1">Add Lesson</h4>
+						<form action="/addLesson" method="post">
+							<div class="my-3">
+								<input type="text" class="form-control-plaintext px-2"
+									name="cId" required="required"
+									placeholder="Course Id (Required)*">
+							</div>
+							<div class="my-3">
+								<input type="text" class="form-control-plaintext px-2"
+									name="lId" required="required"
+									placeholder="Lesson Id (Required)*">
+							</div>
+
+							<div class="my-3">
+								<input type="text" class="form-control-plaintext px-2"
+									name="lName" required="required"
+									placeholder="Lesson Name (Required)*">
+							</div>
+
+							<div class="my-3">
+								<input type="text" class="form-control-plaintext px-2"
+									name="lTopic" required="required"
+									placeholder="Lesson Topic (Required)*">
+							</div>
+							<div class="my-3">
+								<input type="text" class="form-control-plaintext px-2"
+									name="link" required="required"
+									placeholder="Video Link (Required)*">
+							</div>
+
+							<div class="text-center d-grid">
+								<button type="submit" class="btn btn-primary">Add
+									Lesson</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
